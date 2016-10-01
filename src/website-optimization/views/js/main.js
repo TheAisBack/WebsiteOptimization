@@ -497,19 +497,13 @@ function updatePositions() {
   ticking = false;
   frame++;
   window.performance.mark("mark_start_frame");
-
   var items = document.getElementsByClassName('mover');
-
   var currentScrollY = latestKnownScrollY / 1250;
   var phase;
   // use transform and translate GPU accelerated css
   //use style.transform to use GPU and avoid re-layout time.
-
-
   for (var i = 0; i < items.length; i++) {
-
     phase = Math.sin(currentScrollY + (i % 5));
-
     items[i].style.transform = "translateX("+ 100 * phase + "px)";
   }
 
